@@ -11770,72 +11770,31 @@ div#notebook {
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
-
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">HTML</span>
-
-<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;&lt;script&gt;</span>
-<span class="s1">code_show=true; </span>
-<span class="s1">function code_toggle() {</span>
-<span class="s1"> if (code_show){</span>
-<span class="s1"> $(&#39;div.input&#39;).hide();</span>
-<span class="s1"> } else {</span>
-<span class="s1"> $(&#39;div.input&#39;).show();</span>
-<span class="s1"> }</span>
-<span class="s1"> code_show = !code_show</span>
-<span class="s1">} </span>
-<span class="s1">$( document ).ready(code_toggle);</span>
-<span class="s1">&lt;/script&gt;</span>
-<span class="s1">&lt;form action=&quot;javascript:code_toggle()&quot;&gt;&lt;input type=&quot;submit&quot; value=&quot;Click here to toggle on/off the raw code.&quot;&gt;&lt;/form&gt;&#39;&#39;&#39;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[1]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
 <script>
-code_show=true; 
-function code_toggle() {
- if (code_show){
- $('div.input').hide();
- } else {
- $('div.input').show();
- }
- code_show = !code_show
-} 
-$( document ).ready(code_toggle);
+  function code_toggle() {
+    if (code_shown){
+      $('div.input').hide('500');
+      $('#toggleButton').val('Show Code')
+    } else {
+      $('div.input').show('500');
+      $('#toggleButton').val('Hide Code')
+    }
+    code_shown = !code_shown
+  }
+
+  $( document ).ready(function(){
+    code_shown=false;
+    $('div.input').hide()
+  });
 </script>
-<form action="javascript:code_toggle()"><input type="submit" value="Click here to toggle on/off the raw code."></form>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
+<form action="javascript:code_toggle()"><input type="submit" id="toggleButton" value="Show Code"></form>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="k">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
-<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;style&gt;.container { width:70% !important; }&lt;/style&gt;&quot;</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;style&gt;.container { width:80% !important; }&lt;/style&gt;&quot;</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -11853,7 +11812,7 @@ $( document ).ready(code_toggle);
 
 
 <div class="output_html rendered_html output_subarea ">
-<style>.container { width:70% !important; }</style>
+<style>.container { width:80% !important; }</style>
 </div>
 
 </div>
@@ -11864,7 +11823,7 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -11878,7 +11837,7 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
@@ -11915,7 +11874,7 @@ $( document ).ready(code_toggle);
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="k">import</span> <span class="n">output_notebook</span>
@@ -11940,7 +11899,7 @@ $( document ).ready(code_toggle);
 
     <div class="bk-root">
         <a href="https://bokeh.pydata.org" target="_blank" class="bk-logo bk-logo-small bk-logo-notebook"></a>
-        <span id="63478198-421d-4904-be99-29e9ce7f7f08">Loading BokehJS ...</span>
+        <span id="a19665d1-0680-4021-a2d6-ad470b4f0074">Loading BokehJS ...</span>
     </div>
 </div>
 
@@ -11954,10 +11913,10 @@ $( document ).ready(code_toggle);
 
 
 
-<div id="4d7afe6e-4a2b-49d2-8d3e-3878f40bed08"></div>
+<div id="cfc51e6f-560a-41b2-956d-e4e1f5e93f3e"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#4d7afe6e-4a2b-49d2-8d3e-3878f40bed08');
+var element = $('#cfc51e6f-560a-41b2-956d-e4e1f5e93f3e');
 
 (function(root) {
   function now() {
@@ -12115,7 +12074,7 @@ var element = $('#4d7afe6e-4a2b-49d2-8d3e-3878f40bed08');
      "</div>"}};
 
   function display_loaded() {
-    var el = document.getElementById("63478198-421d-4904-be99-29e9ce7f7f08");
+    var el = document.getElementById("a19665d1-0680-4021-a2d6-ad470b4f0074");
     if (el != null) {
       el.textContent = "BokehJS is loading...";
     }
@@ -12169,9 +12128,9 @@ var element = $('#4d7afe6e-4a2b-49d2-8d3e-3878f40bed08');
       console.log("Bokeh: injecting script tag for BokehJS library: ", url);
       document.getElementsByTagName("head")[0].appendChild(s);
     }
-  };var element = document.getElementById("63478198-421d-4904-be99-29e9ce7f7f08");
+  };var element = document.getElementById("a19665d1-0680-4021-a2d6-ad470b4f0074");
   if (element == null) {
-    console.log("Bokeh: ERROR: autoload.js configured with elementid '63478198-421d-4904-be99-29e9ce7f7f08' but no matching script tag was found. ")
+    console.log("Bokeh: ERROR: autoload.js configured with elementid 'a19665d1-0680-4021-a2d6-ad470b4f0074' but no matching script tag was found. ")
     return false;
   }
 
@@ -12208,7 +12167,7 @@ var element = $('#4d7afe6e-4a2b-49d2-8d3e-3878f40bed08');
       console.log("Bokeh: BokehJS failed to load within specified timeout.");
       root._bokeh_failed_load = true;
     } else if (force !== true) {
-      var cell = $(document.getElementById("63478198-421d-4904-be99-29e9ce7f7f08")).parents('.cell').data().cell;
+      var cell = $(document.getElementById("a19665d1-0680-4021-a2d6-ad470b4f0074")).parents('.cell').data().cell;
       cell.output_area.append_execute_result(NB_LOAD_WARNING)
     }
 
@@ -12302,10 +12261,10 @@ var element = $('#4d7afe6e-4a2b-49d2-8d3e-3878f40bed08');
 
 
 
-<div id="277cab17-3da4-454b-995b-9b425aee6552"></div>
+<div id="463b8b78-14f1-4eac-a341-7f8564f9d940"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#277cab17-3da4-454b-995b-9b425aee6552');
+var element = $('#463b8b78-14f1-4eac-a341-7f8564f9d940');
 (function(root) {
   function embed_document(root) {
     
@@ -12420,10 +12379,10 @@ var element = $('#277cab17-3da4-454b-995b-9b425aee6552');
 
 
 
-<div id="ac397bea-d17a-41cf-b7e0-acdb8441feb2"></div>
+<div id="8b7e5df8-6d60-4bee-9bb2-efdb118b640f"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#ac397bea-d17a-41cf-b7e0-acdb8441feb2');
+var element = $('#8b7e5df8-6d60-4bee-9bb2-efdb118b640f');
 (function(root) {
   function embed_document(root) {
     
