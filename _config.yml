@@ -1,3 +1,5 @@
 remote_theme: mmistakes/jekyll-theme-basically-basic
 title: Temporal prediction model
 description: Interactive figures and code associated with *Sensory cortex is optimised for prediction of future input*.
+
+theme: jekyll-theme-slate
