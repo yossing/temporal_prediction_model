@@ -2,7 +2,7 @@
 
 ![model image][logo]
 
-[logo]: https://github.com/yossing/temporal_prediction_model/blob/master/Figures/manuscript_figures/Figure1.png "model image"
+[logo]: https://github.com/yossing/temporal_prediction_model/blob/master/figures/manuscript_figures/Figure1.png "model image"
 
 ----
 
