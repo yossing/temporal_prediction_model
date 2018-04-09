@@ -2,7 +2,7 @@
 
 ![model image][logo]
 
-[logo]: /figures/manuscript_figures/Figure1.png "model image"
+[logo]: (/figures/manuscript_figures/Figure1.png) "model image"
 
 ----
 
