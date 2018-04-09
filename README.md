@@ -1,8 +1,8 @@
 # Temporal Prediciton Model 
 
-![pipeline image][logo]
+![model image][logo]
 
-[logo]: https://github.com/yossing/temporal_prediction_model/blob/master/Figures/manuscript_figures/Figure%201_smaller.png "Pipeline image"
+[logo]: https://github.com/yossing/temporal_prediction_model/blob/master/Figures/manuscript_figures/Figure1.png "model image"
 
 ----
 
