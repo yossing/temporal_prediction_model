@@ -1,8 +1,4 @@
-# Temporal Prediciton Model 
-
 ![model image](/figures/manuscript_figures/Figure1.png)
-
-#[logo]: /figures/manuscript_figures/Figure1.png "model image"
 
 ----
 
