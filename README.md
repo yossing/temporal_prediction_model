@@ -2,7 +2,7 @@
 
 ![pipeline image][logo]
 
-[logo]: (https://github.com/yossing/temporal_prediction_model/blob/master/Figures/manuscript_figures/Figure%201_smaller.png) "Pipeline image"
+[logo]: https://github.com/yossing/temporal_prediction_model/blob/master/Figures/manuscript_figures/Figure%201_smaller.png "Pipeline image"
 
 ----
 
