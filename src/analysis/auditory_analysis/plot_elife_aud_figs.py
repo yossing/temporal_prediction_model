@@ -3,6 +3,7 @@ import importlib
 import random
 from imp import reload
 from mpl_toolkits.axes_grid1 import make_axes_locatable, axes_size
+from mpl_toolkits.axes_grid1.inset_locator import inset_axes
 import numpy as np
 import matplotlib.pyplot as plt
 import visualisation as vis
@@ -16,7 +17,9 @@ reload(quant)
 reload(aan)
 reload(vis)
 
-def plot_quant_aud_figure(weights, sparse_weights, rstrfs, Y_mds, save_path=None):
+def plot_quant_aud_figure(weights, sparse_weights, rstrfs, 
+                          Y_mds, t_pow_real, t_pow_model, 
+                          t_pow_sparse, save_path=None, use_blobs=False):
 
     fig = plt.figure(figsize=[10,20])
     gs = plt.GridSpec(200,100)
@@ -71,9 +74,10 @@ def plot_quant_aud_figure(weights, sparse_weights, rstrfs, Y_mds, save_path=None
     # dummy_ax_y = divider.append_axes("right", size=width, pad=0.1, sharey=ax)
     dummy_ax_x.set_axis_off()
     # dummy_ax_y.set_axis_off()
-    # markers = ['blob', 'blob', 'blob']
-    markers = ['o', 'o', 'o']
-
+    if use_blobs:
+        markers = ['o', 'o', 'o']
+    else:
+        markers = ['blob', 'blob', 'blob']
 
     t_plot_kwargs = {}
     t_plot_kwargs['color']=clors[0]
@@ -113,7 +117,7 @@ def plot_quant_aud_figure(weights, sparse_weights, rstrfs, Y_mds, save_path=None
 
     [mf_peak_pos, mf_peak_neg, mf_bw_pos, mf_bw_neg, mt_peak_pos, mt_peak_neg, mt_bw_pos, mt_bw_neg, m_pow] = quant.quantify_strfs(weights)
     [sf_peak_pos, sf_peak_neg, sf_bw_pos, sf_bw_neg, st_peak_pos, st_peak_neg, st_bw_pos, st_bw_neg, s_pow] = quant.quantify_strfs(sparse_weights)
-    [rf_peak_pos, rf_peak_neg, rf_bw_pos, rf_bw_neg, rt_peak_pos, rt_peak_neg, rt_bw_pos, rt_bw_neg, r_pow] = quant.quantify_strfs(rstrfs)
+    [rf_peak_pos, rf_peak_neg, rf_bw_pos, rf_bw_neg, rt_peak_pos, rt_peak_neg, rt_bw_pos, rt_bw_neg, r_pow] = quant.quantify_strfs(rstrfs, n_h=38)
 
     mf_ix = [mf_bw_neg>0] #and [mf_bw_pos>0]
     rf_ix = [rf_bw_neg>0] #and [rf_bw_pos>0]
@@ -168,9 +172,11 @@ def plot_quant_aud_figure(weights, sparse_weights, rstrfs, Y_mds, save_path=None
         for jj,ax in enumerate(pop_ax[ii,:]):
             x = xs[ii,jj]
             y = ys[ii,jj]
-            clor = clors[jj] 
-            # pop_ax[ii,jj],_ = plotting_funcs.blobscatter(x,y, ax=ax, **{'facecolor':'none','edgecolor':clor})
-            pop_ax[ii,jj],_ = ax.scatter(x,y)
+            clor = clors[jj] # '#444444'
+            if use_blobs: 
+                pop_ax[ii,jj],_ = plotting_funcs.blobscatter(x,y, ax=ax, **{'facecolor':'none','edgecolor':clor})
+            else:
+                ax.scatter(x,y)
             plt_kwargs = {'color':'k', 'linestyle':'--', 'alpha':0.8}
             pop_ax[ii,jj].plot(range(lims[ii]+1), **plt_kwargs)
             pop_ax[ii,jj].set_xlim([0,lims[ii]])
@@ -203,9 +209,14 @@ def plot_quant_aud_figure(weights, sparse_weights, rstrfs, Y_mds, save_path=None
                                     height="40%", # height : 1 inch
                                     loc=1, axes_kwargs=inset_axes_kwargs)
 
-            # inset_ax,_ = plotting_funcs.blobscatter(x,y, ax=inset_ax, **{'facecolor':'none','edgecolor':clor})
-            inset_ax.scatter(x,y)
+            if use_blobs:
+                inset_ax,_ = plotting_funcs.blobscatter(x,y, ax=inset_ax, **{'facecolor':'none','edgecolor':clor})
+            else:
+                inset_ax.scatter(x,y)
 #             inset_ax.hist2d(x,y, bins=inset_binss[ii])
+            
+#             plt_kwargs = {'color':'k', 'linestyle':'--', 'alpha':0.8}
+#             inset_ax.plot(range(lims[ii]+1), **plt_kwargs)
 
     binss = [np.arange(-2.5,200,5), np.arange(0,6,0.15)]
     #Make the scatter plots on the population axes
