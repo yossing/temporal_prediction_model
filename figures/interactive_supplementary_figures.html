@@ -11830,9 +11830,6 @@ div#notebook {
 import os
 os.environ[&quot;THEANO_FLAGS&quot;] = &quot;mode=FAST_RUN,device=gpu,floatX=float32,&quot;
 import sys
-pred_path = &#39;/home/yossi/yossi_local/predictive_coding_python&#39;
-if pred_path not in sys.path:
-    sys.path.append(pred_path)
 import pickle as pkl
 import interactive_plotting as iplot
 </pre></div>
@@ -11883,10 +11880,10 @@ import interactive_plotting as iplot
 
 
 
-<div id="febbd9dd-7169-458a-bfcd-64e8136b95fa"></div>
+<div id="3d18adaa-5413-4743-b957-7abc05e3048e"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#febbd9dd-7169-458a-bfcd-64e8136b95fa');
+var element = $('#3d18adaa-5413-4743-b957-7abc05e3048e');
 
 (function(root) {
   function now() {
@@ -12167,7 +12164,7 @@ var element = $('#febbd9dd-7169-458a-bfcd-64e8136b95fa');
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">aud_res_df_path</span> <span class="o">=</span> <span class="s1">&#39;../Data/main_auditory_results_df.pkl&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">aud_res_df_path</span> <span class="o">=</span> <span class="s1">&#39;../results/main_auditory_results_df.pkl&#39;</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">aud_res_df_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">aud_res_df</span> <span class="o">=</span> <span class="n">pkl</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 <span class="n">aud_res_df</span> <span class="o">=</span> <span class="n">aud_res_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">aud_res_df</span><span class="p">[</span><span class="s1">&#39;nonlinearity&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;noise_ratio==0.5&#39;</span><span class="p">)</span>
@@ -12185,7 +12182,7 @@ var element = $('#febbd9dd-7169-458a-bfcd-64e8136b95fa');
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">capture</span> --no-display
 this_save_dir = &#39;auditory_images/&#39;
-root_dir=&#39;/home/yossi/yossi_local/github/temporal_prediction_model/Figures/&#39;
+root_dir=&#39;./&#39;
 aud_url_pd = iplot.get_urls_for_auditory_df_data(aud_res_df.loc[aud_res_df[&#39;nonlinearity&#39;]==&#39;sigmoid&#39;], 
                                                  &#39;log_reg_factor&#39;, &#39;num_hidden_units&#39;, &#39;final_val_cost&#39;, 
                                                  server_address=&#39;&#39;, root_dir=root_dir, this_save_dir=this_save_dir, 
@@ -12239,10 +12236,10 @@ iplot.plot_linked_heatmap_weights(aud_url_pd, x_key=&#39;log_reg_factor&#39;, y_
 
 
 
-<div id="2623a232-0330-4a95-b3a0-85b75d14dffa"></div>
+<div id="411dddfb-f6bc-46eb-96c8-4ab2675ef766"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#2623a232-0330-4a95-b3a0-85b75d14dffa');
+var element = $('#411dddfb-f6bc-46eb-96c8-4ab2675ef766');
 (function(root) {
   function embed_document(root) {
     
@@ -12281,8 +12278,8 @@ var element = $('#2623a232-0330-4a95-b3a0-85b75d14dffa');
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Figure-8-Figure-Supplement-2--|-Interactive-figure-exploring-the-relationship-between-the-strength-of--L1-regularisation-on-the-network-weights-and-the-structure-of-the-RFs--the-network-produces-when-the-network-is-trained-on-auditory-inputs.">Figure 8-Figure Supplement 2  | Interactive figure exploring the relationship between the strength of  L1 regularisation on the network weights and the structure of the RFs  the network produces when the network is trained on auditory inputs.<a class="anchor-link" href="#Figure-8-Figure-Supplement-2--|-Interactive-figure-exploring-the-relationship-between-the-strength-of--L1-regularisation-on-the-network-weights-and-the-structure-of-the-RFs--the-network-produces-when-the-network-is-trained-on-auditory-inputs.">&#182;</a></h3><p>The left hand panel shows the performance of the network with the hyperparameter settings specified on the x and y axes. The x axis signifies the strength of L1 regularisation placed on the weights of the network during training. The y axis signifies the number of hidden units in the network. The colour represents the performance of model measured by the reconstruction error on held out validation set at the end of training.</p>
-<h4 id="How-to-interact-with-the-figure:">How to interact with the figure:<a class="anchor-link" href="#How-to-interact-with-the-figure:">&#182;</a></h4><p>Hover over a point in the left hand panel to show the corresponding spatial receptive fields of the network in the right hand panel. Using the settings near the right hand panel, zoom, pan and reset the image to explore the shapes of the spectrotemporal receptive fields. Many hidden units’ weight matrices decayed to near zero during training. Inactive units were excluded from analysis and are not shown.</p>
+<h3 id="Figure-8-Figure-supplement-2--|-Interactive-figure-exploring-the-relationship-between-the-strength-of--L1-regularisation-on-the-network-weights-and-the-structure-of-the-RFs--the-network-produces-when-the-network-is-trained-on-auditory-inputs.">Figure 8-Figure supplement 2  | Interactive figure exploring the relationship between the strength of  L1 regularisation on the network weights and the structure of the RFs  the network produces when the network is trained on auditory inputs.<a class="anchor-link" href="#Figure-8-Figure-supplement-2--|-Interactive-figure-exploring-the-relationship-between-the-strength-of--L1-regularisation-on-the-network-weights-and-the-structure-of-the-RFs--the-network-produces-when-the-network-is-trained-on-auditory-inputs.">&#182;</a></h3><p>The  left  hand  panel  shows  the  performance  of  the  network  with  the  hyperparameter settings specified on the x and y axes. The x axis signifies the strength of L1 regularisation placed  on  the  weights  of  the  network  during  training.  The  y  axis  signifies  the  number  of hidden units in the network. The colour represents the predictive capacity of the model as measured by the reconstruction error on a held out validation set.</p>
+<h4 id="How-to-interact-with-the-figure:">How to interact with the figure:<a class="anchor-link" href="#How-to-interact-with-the-figure:">&#182;</a></h4><p>Hover  over  a  point  in  the  left  hand  panel  to  show  the  corresponding spectrotemporal receptive  fields  of  the  network  in  the  right  hand  panel.  Using  the  settings  near  the  right hand panel, zoom, pan and reset the image to explore the shapes of the spectrotemporal receptive fields. Many hidden units’ weight matrices decayed to near zero during training. Inactive units were excluded from analysis and are not shown.</p>
 
 </div>
 </div>
@@ -12292,7 +12289,7 @@ var element = $('#2623a232-0330-4a95-b3a0-85b75d14dffa');
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vis_res_df_path</span> <span class="o">=</span> <span class="s1">&#39;../Data/main_visual_results_df.pkl&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vis_res_df_path</span> <span class="o">=</span> <span class="s1">&#39;../results/main_visual_results_df.pkl&#39;</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">vis_res_df_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">vis_res_df</span> <span class="o">=</span> <span class="n">pkl</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 <span class="n">vis_res_df</span> <span class="o">=</span> <span class="n">vis_res_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;noise_ratio==0.5 and log_reg_factor&gt;-8&#39;</span><span class="p">)</span>
@@ -12310,7 +12307,7 @@ var element = $('#2623a232-0330-4a95-b3a0-85b75d14dffa');
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">capture</span> --no-display
 this_save_dir = &#39;visual_images/&#39;
-root_dir=&#39;/home/yossi/yossi_local/github/temporal_prediction_model/Figures/&#39;
+root_dir=&#39;./&#39;
 visual_url_pd = iplot.get_urls_for_visual_df_data(vis_res_df, &#39;log_reg_factor&#39;, &#39;num_filters&#39;, 
                                                   &#39;final_val_cost&#39;, server_address=&#39;&#39;, 
                                                   root_dir=root_dir, this_save_dir=this_save_dir, 
@@ -12364,10 +12361,10 @@ iplot.plot_linked_heatmap_weights(visual_url_pd, x_key=&#39;log_reg_factor&#39;,
 
 
 
-<div id="b06a1ab1-0f6c-4d4c-a009-22c90bb9448d"></div>
+<div id="31b56917-1cf6-44b1-b958-08dd2333c5e6"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b06a1ab1-0f6c-4d4c-a009-22c90bb9448d');
+var element = $('#31b56917-1cf6-44b1-b958-08dd2333c5e6');
 (function(root) {
   function embed_document(root) {
     
@@ -12406,8 +12403,8 @@ var element = $('#b06a1ab1-0f6c-4d4c-a009-22c90bb9448d');
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Figure-8-Figure-Supplement-3--|-Interactive-figure-exploring-the-relationship-between-the-strength-of--L1-regularisation-on-the-network-weights-and-the-structure-of-the-RFs--the-network-produces-when-the-network-is-trained-on-visual-inputs.">Figure 8-Figure Supplement 3  | Interactive figure exploring the relationship between the strength of  L1 regularisation on the network weights and the structure of the RFs  the network produces when the network is trained on visual inputs.<a class="anchor-link" href="#Figure-8-Figure-Supplement-3--|-Interactive-figure-exploring-the-relationship-between-the-strength-of--L1-regularisation-on-the-network-weights-and-the-structure-of-the-RFs--the-network-produces-when-the-network-is-trained-on-visual-inputs.">&#182;</a></h3><p>The left panel shows the performance of the network with the hyperparameter settings specified on the x and y axes. The x axis signifies the strength of L1 regularisation placed on the weights of the network during training. The y axis signifies the number of hidden units in the network. The colour represents the performance of model measured by the reconstruction error on held out validation set at the end of training.</p>
-<h4 id="How-to-interact-with-the-figure:">How to interact with the figure:<a class="anchor-link" href="#How-to-interact-with-the-figure:">&#182;</a></h4><p>Hover over a point in the left panel to show the corresponding spatial receptive fields of the network in the right panel. Using the settings on the right of the right hand panel, zoom, pan and reset the image to explore the shapes of the spatial receptive fields. Change the slider labelled 'time step' to change the time-step of the spatial receptive fields being shown in the right hand panel. Some hidden units’ weight matrices decayed to near zero during training. Inactive units were excluded from analysis and are not shown.</p>
+<h3 id="Figure-8-Figure-supplement-3--|-Interactive-figure-exploring-the-relationship-between-the-strength-of--L1-regularisation-on-the-network-weights-and-the-structure-of-the-RFs--the-network-produces-when-the-network-is-trained-on-visual-inputs.">Figure 8-Figure supplement 3  | Interactive figure exploring the relationship between the strength of  L1 regularisation on the network weights and the structure of the RFs  the network produces when the network is trained on visual inputs.<a class="anchor-link" href="#Figure-8-Figure-supplement-3--|-Interactive-figure-exploring-the-relationship-between-the-strength-of--L1-regularisation-on-the-network-weights-and-the-structure-of-the-RFs--the-network-produces-when-the-network-is-trained-on-visual-inputs.">&#182;</a></h3><p>The  left  panel  shows  the  performance  of  the  network  with  the  hyperparameter  settings specified on the x and y axes. The x axis signifies the strength of L1 regularisation placed on  the  weights  of  the  network  during  training.  The  y  axis  signifies  the  number  of  hidden units  in  the  network. The  colour  represents  the predictive  capacity of the model as measured by the reconstruction error on a held out validation set.</p>
+<h4 id="How-to-interact-with-the-figure:">How to interact with the figure:<a class="anchor-link" href="#How-to-interact-with-the-figure:">&#182;</a></h4><p>Hover over a point in the left panel to show the corresponding spatial receptive fields of the network  in  the  right  panel.  Using  the  settings  on  the  right  of  the  right  hand  panel,  zoom, pan and reset the image to explore the shapes of the spatial receptive fields. Change the slider  labelled  'time  step'  to  change  the  time-step  of  the  spatial  receptive  fields  being shown in the right hand panel. Some hidden units’ weight matrices decayed to near zero during training. Inactive units were excluded from analysis and are not shown</p>
 
 </div>
 </div>
