@@ -43,7 +43,7 @@ If you would like to perform a grid search over hyperparameters, try out the pac
 # Analysing Receptive Fields (RFs)
 
 ## Visual RFs
-First fit Gabors to the RFs. This can be done by running matlab_code/visual_analysis/fitGabors.m
+First fit Gabors to the visual RFs (input weights). This can be done by running matlab_code/visual_analysis/fitGabors.m
 
 To perform the analysis and make the plots presented in the paper, use the plotting functions in matlab_code/visual_analysis/
 
