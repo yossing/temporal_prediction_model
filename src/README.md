@@ -23,7 +23,7 @@ Install latest versions of Theano and Lasagne:
 	pip install --upgrade https://github.com/Lasagne/Lasagne/archive/master.zip
 
 It is strongly recommended to train networks using a GPU.
-To setup Theano to use the GPU follow the instructions on Theano's website: /http://deeplearning.net/software/theano/tutorial/using_gpu.html
+To setup Theano to use the GPU follow the instructions on Theano's website: http://deeplearning.net/software/theano/tutorial/using_gpu.html
 
 # To train networks
 
@@ -43,9 +43,9 @@ If you would like to perform a grid search over hyperparameters, try out the pac
 ## Analysing Receptive Fields (RFs)
 
 # Visual RFs
-First fit Gabors to the RFs. This can be done by running (./matlab_code/visual_analysis/fitGabors.m)
+First fit Gabors to the RFs. This can be done by running matlab_code/visual_analysis/fitGabors.m
 
-To perform the analysis and make the plots presented in the paper, use the plotting functions in (./matlab_code/visual_analysis/)
+To perform the analysis and make the plots presented in the paper, use the plotting functions in matlab_code/visual_analysis/
 
 # Auditory RFs
 To perform the analysis and make the plots presented in the paper,follow the examples in plot_auditory_figures.ipynb
