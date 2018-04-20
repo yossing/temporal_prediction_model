@@ -1,5 +1,5 @@
-# Custom code used in the paper *Sensory cortex is optimised for prediction of future input*
-**Author: Yosef Singer**
+# Custom code used in the paper:
+**__Sensory cortex is optimised for prediction of future input__**
 
 Code to preprocess auditory data and analyse visual results is written in MATLAB. 
 
