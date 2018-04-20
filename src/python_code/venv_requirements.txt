@@ -1,0 +1,8 @@
+matplotlib
+numpy
+scipy
+tables
+pandas
+scikit-learn
+yapf
+pillow
