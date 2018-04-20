@@ -1,5 +1,7 @@
 # Custom code used in *Sensory cortex is optimised for prediction of future input*
+
 **Author: Yosef Singer**
+
 Code to preprocess auditory data and analyse visual results is written in MATLAB. 
 
 Code to preprocess visual data, train networks and analyse autitory results is written in Python.
