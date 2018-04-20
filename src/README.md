@@ -33,7 +33,7 @@ Follow the example in [create_visual_dataset.ipynb](python_code/create_visual_da
 
 ## Preprocessing auditory data
 
-Follow the instructions in [/matlab_code/auditory_preprocessing/README.md](matlab_code/auditory_preprocessing/README.md)
+Follow the instructions in [/matlab_code/auditory_preprocessing/README.txt](matlab_code/auditory_preprocessing/README.txt)
 
 ## Training networks
 
