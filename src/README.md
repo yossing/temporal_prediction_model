@@ -42,7 +42,7 @@ Follow the instructions in [/matlab_code/auditory_preprocessing/README.txt](matl
 ---
 ## Training networks
 
-Follow the examples given in [train_networks.ipynb](python_code/train_networks.ipynb)
+Follow the examples given in [train_predictive_networks.ipynb](python_code/train_predictive_networks.ipynb)
 
 If you would like to perform a grid search over hyperparameters, try out the package in https://github.com/yossing/distributed_grid_search/
 
