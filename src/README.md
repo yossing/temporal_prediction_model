@@ -29,7 +29,7 @@ To setup Theano to use the GPU follow the instructions on Theano's website: http
 
 ## Preprocessing visual data
 
-Follow the example in create_visual_dataset.ipynb
+Follow the example in [create_visual_dataset.ipynb](python_code/create_visual_dataset.ipynb)
 
 ## Preprocessing auditory data
 
@@ -43,7 +43,7 @@ If you would like to perform a grid search over hyperparameters, try out the pac
 # Analysing Receptive Fields (RFs)
 
 ## Visual RFs
-First fit Gabors to the visual RFs (input weights). This can be done by running [matlab_code/visual_analysis/fitGabors_best_t_step.m](matlab_code/visual_analysis/fitGabors.m)
+First fit Gabors to the visual RFs (input weights). This can be done by running [matlab_code/visual_analysis/fitGabors_best_t_step.m](matlab_code/visual_analysis/fitGabors_best_t_step.m)
 
 To perform the analysis and make the plots presented in the paper, use the plotting functions in [matlab_code/visual_analysis/](matlab_code/visual_analysis/)
 
