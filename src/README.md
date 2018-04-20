@@ -1,5 +1,6 @@
 All of the custom code used to in the paper is presented here. 
-The code to preproce the auditory data and analyse the visual results is written in MATLAB. 
+
+The code to preprocess  auditory data and analyse visual results is written in MATLAB. 
 All other code is written in Python. 
 
 # Installation instructions
@@ -14,12 +15,12 @@ cd into python_code directory
 
 Install python dependencies using pip:
 
-$pip install -r virtual_requirements.txt
+	pip install -r virtual_requirements.txt
 
 Install latest versions of Theano and Lasagne:
 
-$pip install --upgrade https://github.com/Theano/Theano/archive/master.zip
-$pip install --upgrade https://github.com/Lasagne/Lasagne/archive/master.zip
+	pip install --upgrade https://github.com/Theano/Theano/archive/master.zip
+	pip install --upgrade https://github.com/Lasagne/Lasagne/archive/master.zip
 
 It is strongly recommended to train networks using a GPU.
 To setup Theano to use the GPU follow the instructions on Theano's website: '/http://deeplearning.net/software/theano/tutorial/using_gpu.html'
