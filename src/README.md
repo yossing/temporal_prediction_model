@@ -33,7 +33,7 @@ Follow the example in create_visual_dataset.ipynb
 
 ## Preprocessing auditory data
 
-Follow the instructions in [/matlab_code/auditory_preprocessing/README.md](/matlab_code/auditory_preprocessing/README.md)
+Follow the instructions in [/matlab_code/auditory_preprocessing/README.md](matlab_code/auditory_preprocessing/README.md)
 
 ## Training networks
 
@@ -43,9 +43,9 @@ If you would like to perform a grid search over hyperparameters, try out the pac
 # Analysing Receptive Fields (RFs)
 
 ## Visual RFs
-First fit Gabors to the visual RFs (input weights). This can be done by running [matlab_code/visual_analysis/fitGabors.m](matlab_code/visual_analysis/fitGabors.m)
+First fit Gabors to the visual RFs (input weights). This can be done by running [matlab_code/visual_analysis/fitGabors_best_t_step.m](matlab_code/visual_analysis/fitGabors.m)
 
 To perform the analysis and make the plots presented in the paper, use the plotting functions in [matlab_code/visual_analysis/](matlab_code/visual_analysis/)
 
 ## Auditory RFs
-To perform the analysis and make the plots presented in the paper, follow the examples in [plot_auditory_figures.ipynb](plot_auditory_figures.ipynb)
+To perform the analysis and make the plots presented in the paper, follow the examples in [plot_auditory_figures.ipynb](python_code/plot_auditory_figures.ipynb)
