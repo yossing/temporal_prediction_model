@@ -1,4 +1,4 @@
-All of the custom code used to in the paper is presented here. 
+# Custom code to preprocess datasets, train predictive networks and analyse their receptive fields
 
 The code to preprocess  auditory data and analyse visual results is written in MATLAB. 
 All other code is written in Python. 
