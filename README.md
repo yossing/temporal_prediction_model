@@ -14,5 +14,5 @@ The interactive supplementary figures can be found [here](https://yossing.github
 
 **Code**
 
-All of the custom code used in the project can be found [here](https://yossing.github.io/temporal_prediction_model/src/)
-Detailed instructions on how to use the code can be found in the [README](https://yossing.github.io/temporal_prediction_model/src/README.md) 
+All of the custom code used in the project can be found [here](https://github.com/yossing/temporal_prediction_model/tree/master/src)
+Detailed instructions on how to use the code can be found in the [README](https://github.com/yossing/temporal_prediction_model/tree/master/src/README.md) 
