@@ -1,7 +1,3 @@
-![model image](/figures/manuscript_figures/Figure1.png)
-
-----
-
 **Code and interactive figures used in *Sensory cortex is optimised for prediction of future input***.
 
 Project website: [https://yossing.github.io/temporal_prediction_model/](https://yossing.github.io/temporal_prediction_model/)
