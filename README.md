@@ -6,7 +6,7 @@
 
 Project website: [https://yossing.github.io/temporal_prediction_model/]
 
-The full paper can be found [here](https://www.biorxiv.org/content/early/2017/11/24/224758)
+The full eLife paper can be found here: [https://elifesciences.org/articles/31557]
 
 The interactive supplementary figures can be found [here](https://yossing.github.io/temporal_prediction_model/figures/interactive_supplementary_figures.html)
 
