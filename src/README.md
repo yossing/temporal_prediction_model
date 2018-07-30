@@ -1,15 +1,18 @@
-All of the custom code used to in the paper is presented here. 
+# Custom code used in *Sensory cortex is optimised for prediction of future input*
 
-The code to preprocess  auditory data and analyse visual results is written in MATLAB. 
-All other code is written in Python. 
+**Author: Yosef Singer**
 
-# Setup instructions
+Code to preprocess auditory data and analyse visual results is written in MATLAB. 
+
+Code to preprocess visual data, train networks and analyse autitory results is written in Python.
+
+## Setup instructions
 First clone the repository or download the ./src directory
 
-## To use MATLAB code:
+### To use MATLAB code:
 No setup required. 
 
-## To use Python code:
+### To use Python code:
 
 cd into python_code directory
 
@@ -25,27 +28,31 @@ Install latest versions of Theano and Lasagne:
 It is strongly recommended to train networks using a GPU.
 To setup Theano to use the GPU follow the instructions on Theano's website: http://deeplearning.net/software/theano/tutorial/using_gpu.html
 
-# To train networks
+---
+## Preprocessing
 
-## Preprocessing visual data
+### Preprocessing visual data
 
-Follow the example in create_visual_dataset.ipynb
+Follow the example in [create_visual_dataset.ipynb](python_code/create_visual_dataset.ipynb)
 
-## Preprocessing auditory data
+### Preprocessing auditory data
 
-Follow the instructions in ./matlab_code/auditory_preprocessing/README.md
+Follow the instructions in [/matlab_code/auditory_preprocessing/README.txt](matlab_code/auditory_preprocessing/README.txt)
 
+---
 ## Training networks
 
-Follow the examples given in train_networks.ipynb
-If you would like to perform a grid search over hyperparameters, try out the package in https://github.com/yossing/ditributed_grid_search/
+Follow the examples given in [train_predictive_networks.ipynb](python_code/train_predictive_networks.ipynb)
 
-# Analysing Receptive Fields (RFs)
+If you would like to perform a grid search over hyperparameters, try out the package in https://github.com/yossing/distributed_grid_search/
 
-## Visual RFs
-First fit Gabors to the visual RFs (input weights). This can be done by running matlab_code/visual_analysis/fitGabors.m
+---
+## Analysing Receptive Fields (RFs)
 
-To perform the analysis and make the plots presented in the paper, use the plotting functions in matlab_code/visual_analysis/
+### Visual RFs
+First fit Gabors to the visual RFs (input weights). This can be done by running [matlab_code/visual_analysis/fitGabors_best_t_step.m](matlab_code/visual_analysis/fitGabors_best_t_step.m)
 
-## Auditory RFs
-To perform the analysis and make the plots presented in the paper,follow the examples in plot_auditory_figures.ipynb
+To perform the analysis and make the plots presented in the paper, use the plotting functions in [matlab_code/visual_analysis/](matlab_code/visual_analysis/)
+
+### Auditory RFs
+To perform the analysis and make the plots presented in the paper, follow the examples in [plot_auditory_figures.ipynb](python_code/plot_auditory_figures.ipynb)
